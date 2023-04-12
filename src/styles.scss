@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import 'ngx-toastr/toastr'; 
+
+html, body { 
+    height: 100%; 
+}
+body { 
+    margin: 0; 
+    font-family: Roboto, "Helvetica Neue", sans-serif; 
+}
+.full-width {
+    width: 100%;
+    float: left;
+}
+.mat-mdc-radio-button.mat-accent { 
+    --mdc-radio-selected-focus-icon-color: #dc3545;
+    --mdc-radio-selected-hover-icon-color: #dc3545;
+    --mdc-radio-selected-icon-color: #dc3545;
+    --mdc-radio-selected-pressed-icon-color: #dc3545; 
+    --mat-mdc-radio-checked-ripple-color: #dc3545;
+}

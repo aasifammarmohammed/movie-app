@@ -1,0 +1,51 @@
+<div class="movie-main-container full-width">
+  <div class="banner full-width">
+      <h1>Welcome to the Movie Booking App</h1>
+  </div>
+
+  <div class="flex-boxes">
+      <mat-card *ngFor="let item of movieListContainer; index as index" class="movies-detail">
+          <a (click)="onDisplayMovieDetail(item)">
+              <!-- <img [src]="item.thumbnail_url" class="theater-image" alt="theaterName" /> -->
+              <img src="../../../assets/images/cinema.jpg" class="theater-image" alt="theaterName" />
+              <div class="para_details">
+                  <p class="title">
+                      <span>Movies</span>
+                      <span>Timings</span>
+                  </p>
+                  <p>
+                      <span>{{ item.show1_movie }}</span>
+                      <small>{{ item.show1_time }}</small>
+                  </p>
+                  <p>
+                      <span>{{ item.show2_movie }}</span>
+                      <small>{{ item.show2_time }}</small>
+                  </p>
+                  <p>
+                      <span>{{ item.show3_movie }}</span>
+                      <small>{{ item.show3_time }}</small>
+                  </p>
+                  <p>
+                      <span>{{ item.show4_movie }}</span>
+                      <small>{{ item.show4_time }}</small>
+                  </p>
+              </div>
+              <div class="hover_design">
+                  <div class="headers">
+                      <mat-card-header>
+                          <mat-card-title>{{ item.theatre_name }}</mat-card-title>
+                      </mat-card-header>
+
+                      <mat-card-actions>
+                          <i class="fa fa-star" aria-hidden="true"></i>
+                          <button mat-button>{{ item.customer_rating}} / 5</button>
+                      </mat-card-actions>
+                  </div>
+                  <div class="book_now">
+                      <button class="btn booknow">Book Now</button>
+                  </div>
+              </div>
+          </a>
+      </mat-card>
+  </div>
+</div>

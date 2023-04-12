@@ -1,0 +1,62 @@
+<div class="book-movies">
+    <div class="close">
+        <button class="close" type="button" color="primary" (click)="closeDialog()">
+            <i class="fa fa-times" aria-hidden="true"></i>
+        </button>
+    </div>
+    <div class="book-seats">
+        <form [formGroup]="myForm">
+            <div class="full-width">
+                <h5 class="title">{{ movieDetail.theatre_name }}</h5>
+                <hr />
+                <div class="movie_seats_container">
+                    <div class="show_timings">
+                        <p>Select the Date</p>
+                        <div class="date">
+                            <mat-form-field class="example-full-width" appearance="fill">
+                                <input formControlName="movieBookedDate" matInput [matDatepicker]="picker" />
+                                <mat-datepicker-toggle matIconSuffix [for]="picker">
+                                    <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+                                </mat-datepicker-toggle>
+                                <mat-datepicker #picker></mat-datepicker>
+                            </mat-form-field>
+                        </div>
+                        <hr />
+                        <div class="time_and_movie">
+                            <div class="select_time">
+                                <p>Select the Preferred Time</p>
+                                <mat-radio-group aria-label="Select an option" formControlName="movieShowTime">
+                                    <mat-radio-button value="{{ movieDetail.show1_time }}">{{ movieDetail.show1_time }}</mat-radio-button>
+                                    <mat-radio-button value="{{ movieDetail.show2_time }}">{{ movieDetail.show2_time }}</mat-radio-button>
+                                    <mat-radio-button value="{{ movieDetail.show3_time }}">{{ movieDetail.show3_time }}</mat-radio-button>
+                                    <mat-radio-button value="{{ movieDetail.show4_time }}">{{ movieDetail.show4_time }}</mat-radio-button>
+                                </mat-radio-group>
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="select_movie">
+                            <p>Select the Preferred Movie</p>
+                            <mat-radio-group aria-label="Select an option" formControlName="movieShowName">
+                                <mat-radio-button [ngClass]="{'hide_radio': movieDetail.show1_movie === this.movieDetail.show3_movie}" value="{{ movieDetail.show1_movie }}">{{ movieDetail.show1_movie }}</mat-radio-button>
+                                <mat-radio-button [ngClass]="{'hide_radio': movieDetail.show2_movie === this.movieDetail.show4_movie}" value="{{ movieDetail.show2_movie }}">{{ movieDetail.show2_movie }}</mat-radio-button>
+                                <mat-radio-button value="{{ movieDetail.show3_movie }}">{{ movieDetail.show3_movie }}</mat-radio-button>
+                                <mat-radio-button value="{{ movieDetail.show4_movie }}" value="{{ movieDetail.show4_movie }}">{{ movieDetail.show4_movie }}</mat-radio-button>
+                            </mat-radio-group>
+                        </div>
+                    </div>
+                    <div class="select_seats">
+                        <div class="seats_availables" *ngFor="let interest of movieSeats; let i = index">
+                            <mat-checkbox class="example-margin" (change)="onChange($event)" [value]="interest.abbreviation">
+                                {{interest.name}}
+                            </mat-checkbox>
+                        </div>
+                    </div>
+                </div>
+                <hr />
+            </div>
+            <div class="button-grp full-width">
+                <button [disabled]="!myForm.valid" class="btn btn-success" type="submit" (click)="onSubmit()">Book Now</button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,3 @@
+1 - Run the ng serve command to run the application
+2 - Have used angular material, ngx toaster and ngx bootstrap. While installing the packages, installd with save option. If needed please install it.
+3 - For displaying movie list section, in the movie array, expcept the first object "thumbnail_url" image other images are not rendering from the backend. I have commented the dyanmic binding image tag in "movie-list.component.html" and rendered the static image. If needed pls uncomment line no.9 in the same html and check for the dynamic image rendering.

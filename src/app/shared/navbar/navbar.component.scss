@@ -1,0 +1,19 @@
+.navbar {
+    background: #000 !important;
+    box-shadow: 0px -6px 17px #ffffff;
+    .navbar-brand {
+        color: #fff;
+    }
+    .form-control {
+        width: 70%;
+        border-radius: 0;
+    }
+    .btn {
+        background: #dc3545;
+        color: #fff;
+        border: none;
+    }
+}
+.custom-padding {
+    padding: 10px 20px;
+}
